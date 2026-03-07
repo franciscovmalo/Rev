@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviewers</title>
+    <link rel="stylesheet" href="css/App.css">
+    <style>
+        /* Small layout fix to ensure sidebars and middle section align correctly */
+        .homePage {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="App" id="dashboard-view" style="display: none;">
+        
+        <div class="navbar">
+            <div class="links">                  
+                <a href="#" style="color: white; text-decoration: none; font-size: 25px; font-weight: bold; margin-left: 20px;">Reviewers</a>
+            </div>
+            <div class="logout">
+                <h2 id="display-username">Username</h2>
+                <button id="btn-logout">Logout</button>
+            </div>
+        </div>
+
+        <div class="homePage">  
+            
+            <div class="left">
+                <div class="sidebarContent">
+                    <a href="#">Trending</a>
+                    <a href="#">Latest</a>
+                    <a href="#">Create</a>
+                    <a href="#">Following</a>
+                    <a href="#">Saved</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+
+            <div class="middle" id="feed-container">
+                
+                <div class="newPost" id="create-post-section" style="background-color: var(--color-gray); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <form class="formContainer" id="form-create-post">
+                        <h2 style="color: white; margin-top: 0;">Create a New Post</h2>
+                        
+                        <label>Title:</label>
+                        <input id="inputField" name="title" placeholder="(Ex. My Title)" autocomplete="off" required />
+
+                        <label style="margin-top: 10px; display: block;">Post:</label>
+                        <input id="inputField" name="postText" placeholder="(Ex. Hello World!)" autocomplete="off" required />
+
+                        <button type="submit">Create Post</button>
+                    </form>
+                </div>
+
+                <div class="post">
+                    <div class="title">Welcome to the Feed!</div>
+                    <div class="body">
+                        This is where your reviews will appear. Try creating a post above!
+                    </div>
+                    <div class="footer">
+                        <div class="profilePicture">
+                            <img src="pic.png" alt="Profile"/>
+                        </div>
+                        <div class="username">
+                            <a href="#">Admin</a>
+                        </div>
+                        <div class="buttons">
+                            <button class="likeBttn">Com</button>
+                            <button class="likeBttn">Like</button>
+                            <label>20</label>
+                        </div>
+                    </div>
+                    <div class="listOfComments">
+                        <div class="comment">
+                            <h3>ReviewersBot</h3>
+                            <label>Glad to have you back!</label>
+                            <button class="delete">X</button>
+                        </div>
+                        <div class="addComment">
+                            <input type="text" placeholder="Add Comment..." />
+                            <button>Comment</button>
+                        </div> 
+                    </div>                 
+                </div>        
+            </div>
+
+            <div class="right">
+                <div class="user">
+                    <a href="#">Suggested User 1</a>    
+                </div>
+                <div class="user">
+                    <a href="#">Suggested User 2</a>    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="loginPage" id="login-view">
+        <form class="formContainer" id="form-login">
+            <h1 style="color: var(--color-orange);">Reviewers</h1>
+            <h2>Login</h2>
+            <label>Username</label>
+            <input id="loginField" name="username" type="text" required />
+
+            <label>Password</label>
+            <input id="loginField" name="password" type="password" required />
+
+            <button type="submit">Login</button>
+
+            <div style="margin-top: 15px;">
+                <span id="login-error" style="display: none;">Invalid credentials</span>
+            </div>
+        </form>
+        <div style="margin-top: 20px;">
+            <span>Don't have an account? <a href="#" id="link-to-register" style="color: var(--color-orange);">Create account</a></span>
+        </div>
+    </div>
+
+    <div class="loginPage" id="register-view" style="display: none;">
+        <div>
+            <h2 style="text-align: center;">Welcome to Reviewers</h2>
+            <h3 style="text-align: center; font-weight: normal; margin-bottom: 20px;">Insert your data to create a new account</h3>
+        </div>
+        <form class="formContainer" id="form-register">
+            <input id="inputField" name="name" placeholder="Your Name" type="text" required />
+            <input id="inputField" name="username" placeholder="Username" type="text" required />
+            <input id="inputField" name="birthdate" type="date" required />
+            <input id="inputField" name="email" placeholder="E-mail" type="email" required />
+            <input id="inputField" name="password" placeholder="Password" type="password" required />
+            
+            <button type="submit">Register</button>
+        </form>
+        <div style="margin-top: 20px;">
+            <span>Already have an account? <a href="#" id="link-to-login" style="color: var(--color-orange);">Login</a></span>
+        </div>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+</html>
